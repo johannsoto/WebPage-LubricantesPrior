@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Selección de elementos del DOM
     const menuBtn = document.querySelector(".menu-btn");
     const menu = document.querySelector(".menu");
-    const logo = document.querySelector(".logo"); // Seleccionamos el logo
+    const logo = document.querySelector(".logo"); // Logo de la web
 
     if (!menuBtn || !menu || !logo) {
         console.error("⚠️ Elementos no encontrados en el DOM.");
         return;
     }
 
+    // Evento para abrir/cerrar el menú
     menuBtn.addEventListener("click", function() {
         menu.classList.toggle("menu-active");
-        logo.classList.toggle("logo-move"); // Agregamos la clase para mover el logo
+        logo.classList.toggle("logo-move"); // Mover el logo en menú activo
 
-        // Cambia el ícono entre ☰ y ✖
+        // Cambiar ícono entre ☰ y ✖
         menuBtn.textContent = menu.classList.contains("menu-active") ? "✖" : "☰";
     });
 
@@ -20,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".menu a").forEach(item => {
         item.addEventListener("click", function() {
             menu.classList.remove("menu-active");
-            logo.classList.remove("logo-move"); // Volvemos el logo a su posición original
+            logo.classList.remove("logo-move");
             menuBtn.textContent = "☰";
         });
     });
@@ -48,5 +50,37 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
+});
+
+// Formulario de contacto con EmailJS
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("ldX56R6NFfo2D0JDE"); // Reemplaza con tu Public Key de EmailJS
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita el recargo de la página
+
+        // Capturar datos del formulario
+        let nombre = document.getElementById("nombre").value;
+        let email = document.getElementById("email").value;
+        let mensaje = document.getElementById("mensaje").value;
+
+        let parametros = {
+            from_name: nombre,
+            from_email: email,
+            message: mensaje
+        };
+
+        // Envío del correo mediante EmailJS
+        emailjs.send("service_q040uqg", "template_3vkvmfd", parametros)
+            .then(function (response) {
+                console.log("✅ Correo enviado con éxito", response);
+                document.getElementById("status-message").innerText = "✅ ¡Mensaje enviado!";
+                document.getElementById("contact-form").reset(); // Limpiar el formulario
+            })
+            .catch(function (error) {
+                console.error("❌ Error al enviar el correo", error);
+                document.getElementById("status-message").innerText = "❌ Error al enviar mensaje.";
+            });
+    });
 });
 

@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh;
 }
 /*encabezado con flex box*/
 header {
@@ -585,4 +586,307 @@ footer {
 
 }
 
+#whatsapp-button {
+    position: fixed;
+    bottom: 40px; /* Ajusta la distancia desde la parte inferior de la pantalla */
+    right: 40px;  /* Ajusta la distancia desde la parte derecha de la pantalla */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 50%; /* Hace que el contorno sea redondo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
 
+#whatsapp-icon {
+    width: 100px; /* Tamaño del icono */
+    height: 100px; /* Tamaño del icono */
+    border-radius: 50%;
+}
+#whatsapp-button:hover {
+    transform: scale(1.5); /* Aumenta un 10% el tamaño del botón cuando se pasa el mouse */
+    transition: transform 0.3s ease; /* Suaviza el cambio de tamaño */
+}
+/* Tarjetas de Servicios - Más Grandes y Alineadas */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.service-card {
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+}
+
+.service-card img {
+    width: 100%;
+    max-width: 400px; /* Tamaño más grande */
+    border-radius: 15px;
+}
+
+.service-card h3 {
+    margin-top: 15px;
+    font-size: 2em;
+    max-width: 400px; /* Limita el ancho del título */
+}
+
+.service-card p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    max-width: 400px; /* Alinea el texto con la imagen */
+    text-align: justify; /* Alineación justificada */
+}
+
+/* Efecto hover */
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustes Responsivos */
+
+/* Para Tablets */
+@media (max-width: 1024px) {
+    .service-cards {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en tablets */
+    }
+
+    .service-card img {
+        max-width: 350px;
+    }
+
+    .service-card h3,
+    .service-card p {
+        max-width: 350px; /* Mantiene la alineación con la imagen */
+    }
+}
+
+/* Para Móviles */
+@media (max-width: 768px) {
+    .service-card img {
+        max-width: 300px; /* Ajuste para móviles */
+    }
+
+    .service-card h3,
+    .service-card p {
+        max-width: 300px; /* Alineación en móviles */
+    }
+}
+
+
+/* Tarjetas de Productos */
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    max-width: 90%;
+    margin: auto;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 250px; /* Tamaño más grande */
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    font-size: 1.5em; /* Más grande */
+    max-width: 250px;
+}
+
+.product-card p {
+    font-size: 1em;
+    line-height: 1.4;
+    color: #333;
+    max-width: 250px;
+    text-align: justify;
+}
+
+/* Efecto hover */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustes Responsivos */
+
+/* Para Tablets */
+@media (max-width: 1024px) {
+    .product-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+
+    .product-card img {
+        max-width: 220px;
+    }
+
+    .product-card h3 {
+        font-size: 1.4em;
+    }
+
+    .product-card p {
+        font-size: 0.95em;
+    }
+}
+
+/* Para Móviles */
+@media (max-width: 768px) {
+    .product-cards {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+    }
+
+    .product-card img {
+        max-width: 200px; /* Ajuste para móviles */
+    }
+
+    .product-card h3 {
+        font-size: 1.3em;
+    }
+
+    .product-card p {
+        font-size: 0.9em;
+    }
+}
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 30px 0;
+    color: #333;
+}
+.info-section {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Espacio entre la imagen y el texto */
+    max-width: 900px;
+    width: 100%;
+}
+
+.info-image {
+    width: 150px; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 8px;
+}
+
+.info-text {
+    max-width: 600px;
+}
+
+.info-text h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.info-text p {
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-image {
+        width: 120px;
+    }
+}
+.main1{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 10px auto;
+    display: flex;
+}
+
+.contact-form button:hover {
+    background-color: #b71c1c;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 20px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
