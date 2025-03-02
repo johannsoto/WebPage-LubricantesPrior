@@ -54,7 +54,7 @@ var swiper = new Swiper(".mySwiper", {
 
 // Formulario de contacto con EmailJS
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("ldX56R6NFfo2D0JDE"); // Reemplaza con tu Public Key de EmailJS
+    emailjs.init("-YDq2LY6mmU44YF79"); // Reemplaza con tu Public Key de EmailJS
 
     document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault(); // Evita el recargo de la página
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Envío del correo mediante EmailJS
-        emailjs.send("service_q040uqg", "template_3vkvmfd", parametros)
+        emailjs.send("service_lnvfi4a", "template_vcbdmkp", parametros)
             .then(function (response) {
                 console.log("✅ Correo enviado con éxito", response);
                 document.getElementById("status-message").innerText = "✅ ¡Mensaje enviado!";
