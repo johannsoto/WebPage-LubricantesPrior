@@ -345,6 +345,7 @@ footer {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Tarjeta */
@@ -512,6 +513,7 @@ footer {
     margin-right: 40px;
     color: #2C3E50;
     font-weight: bold;
+    text-align: center;
 }
 
 .about-text {
