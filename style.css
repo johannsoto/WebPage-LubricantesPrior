@@ -1,6 +1,6 @@
 /* Estilos del body*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Questrial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -608,6 +608,12 @@ footer {
     transition: transform 0.3s ease; /* Suaviza el cambio de tamaño */
 }
 /* Tarjetas de Servicios - Más Grandes y Alineadas */
+.body-servicios{
+    background-image: url(imagenes/servicios.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:soft-light;
+}
 .service-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -891,4 +897,7 @@ footer {
 
 .social-icons img:hover {
     transform: scale(1.1);
+}
+
+
 }
