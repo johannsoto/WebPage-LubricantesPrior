@@ -1,24 +1,29 @@
+/**
+ * Autor: Johann Alexander Soto Hernández
+ * Fecha: 18/03/2025
+ * Descripción: funcionalidad de la página web.
+ */
 document.addEventListener("DOMContentLoaded", function() {
-    // Selección de elementos del DOM
+   
     const menuBtn = document.querySelector(".menu-btn");
     const menu = document.querySelector(".menu");
-    const logo = document.querySelector(".logo"); // Logo de la web
+    const logo = document.querySelector(".logo");
 
     if (!menuBtn || !menu || !logo) {
         console.error("⚠️ Elementos no encontrados en el DOM.");
         return;
     }
 
-    // Evento para abrir/cerrar el menú
+    
     menuBtn.addEventListener("click", function() {
         menu.classList.toggle("menu-active");
-        logo.classList.toggle("logo-move"); // Mover el logo en menú activo
+        logo.classList.toggle("logo-move"); 
 
-        // Cambiar ícono entre ☰ y ✖
+        
         menuBtn.textContent = menu.classList.contains("menu-active") ? "✖" : "☰";
     });
 
-    // Cierra el menú al hacer clic en un enlace y vuelve el logo a su posición original
+    
     document.querySelectorAll(".menu a").forEach(item => {
         item.addEventListener("click", function() {
             menu.classList.remove("menu-active");
@@ -28,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Inicializar Swiper con efecto Coverflow
+
 var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -36,14 +41,14 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     loop: true,
     coverflowEffect: {
-        rotate: 30, // Rotación de las imágenes
+        rotate: 30, 
         stretch: 0,
-        depth: 100, // Profundidad del efecto
+        depth: 100, 
         modifier: 1,
         slideShadows: true,
     },
     autoplay: {
-        delay: 4500, // Cambio automático cada 4.5 segundos
+        delay: 4500, 
         disableOnInteraction: false,
     },
     pagination: {
@@ -52,14 +57,14 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-// Formulario de contacto con EmailJS
+
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("-YDq2LY6mmU44YF79"); // Reemplaza con tu Public Key de EmailJS
+    emailjs.init("-YDq2LY6mmU44YF79"); 
 
     document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita el recargo de la página
+        event.preventDefault(); 
 
-        // Capturar datos del formulario
+       
         let nombre = document.getElementById("nombre").value;
         let email = document.getElementById("email").value;
         let mensaje = document.getElementById("mensaje").value;
@@ -70,12 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
             message: mensaje
         };
 
-        // Envío del correo mediante EmailJS
+        
         emailjs.send("service_lnvfi4a", "template_vcbdmkp", parametros)
             .then(function (response) {
                 console.log("✅ Correo enviado con éxito", response);
                 document.getElementById("status-message").innerText = "✅ ¡Mensaje enviado!";
-                document.getElementById("contact-form").reset(); // Limpiar el formulario
+                document.getElementById("contact-form").reset(); 
             })
             .catch(function (error) {
                 console.error("❌ Error al enviar el correo", error);

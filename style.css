@@ -1,4 +1,8 @@
-/* Estilos del body*/
+/* 
+   Autor: Johann Alexander Soto Hernández
+   Fecha: 18 de marzo de 2025
+   Descripción: Estilos para lubricantes pior
+*/
 body {
     font-family: 'Questrial', sans-serif;
     margin: 0;
@@ -7,7 +11,7 @@ body {
     color: #333;
     min-height: 100vh;
 }
-/*encabezado con flex box*/
+
 header {
     background-color: #ffffff;
     color: white;
@@ -15,26 +19,34 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
-/* Logo alineado a la izquierda*/
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        display: grid;
+    }
+}
+
 .logo{
     display: flex;
     align-items: center;
-    transition: transform 0.3s ease-in-out; /* Suaviza el movimiento */
+    transition: transform 0.3s ease-in-out; 
 }
-/* Ajusta el tamaño del logo */
+
 .logo img{
     width: 200px;
     height: auto;
-    margin-right: 60px;
+    
 }
-/* Menú de navegación */
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
@@ -66,9 +78,15 @@ nav ul li a:hover {
     .menu-btn {
         display: block;
     }
+    .all {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+    }
 
     nav ul {
-        display: none; /* Ocultar menú por defecto */
+        display: none; 
         flex-direction: column;
         position:static;
         top: 60px;
@@ -77,18 +95,35 @@ nav ul li a:hover {
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        border-radius: 10px;
+        font-size: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .nav{
+        display: contents;
     }
 
     nav ul.menu-active {
-        display: flex; /* Mostrar menú cuando esté activo */
+        display: flex; 
     }
 
     nav ul li {
         margin: 10px 0;
+        padding: 15px 0;
+        border-bottom: 2px solid #a1a1a1; 
+        width: 100%; 
+        margin: auto; 
+    }
+
+    
+    nav ul li:last-child {
+        border-bottom: none;
     }
 }
 .logo-move {
-    transform: translateX(50px); /* Mueve el logo 50px a la derecha */
+    transform: translateY(10px); 
 }
 .hero1{
     margin-top: 10%;
@@ -96,7 +131,7 @@ nav ul li a:hover {
 .hero {
     position: relative;
     width: 100%;
-    height: 600px; /* Ajusta según necesites */
+    height: 600px; 
     background: url('imagenes/encabezado.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -106,7 +141,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para mejorar visibilidad */
+    background: rgba(0, 0, 0, 0.5); 
     padding: 20px;
     border-radius: 10px;
 }
@@ -164,8 +199,8 @@ footer {
 }
 .button-group {
     display: flex;
-    justify-content: center; /* Centra los botones */
-    gap: 15px; /* Espacio entre ellos */
+    justify-content: center; 
+    gap: 15px; 
     margin-top: 15px;
 }
 
@@ -231,15 +266,15 @@ footer {
     border-radius: 10px;
 }
 
-/* Personalizar la paginación */
+
 .swiper-pagination-bullet-active {
     background: #ff6600;
 }
 .info-section {
     display: flex;
-    flex-direction: row; /* Asegura que los elementos se apilen en móviles */
+    flex-direction: row; 
     align-items: center;
-    text-align: center; /* Centra el texto en pantallas pequeñas */
+    text-align: center; 
     gap: 80px;
     width: 90%;
     max-width: 800px;
@@ -249,7 +284,7 @@ footer {
 }
 
 .info-section img {
-    width: 500px; /* Tamaño pequeño */
+    width: 500px; 
     height: auto;
     border-radius: 5px;
 }
@@ -272,32 +307,32 @@ footer {
     line-height: 1.6;
 }
 .info-section {
-    display: flex; /* Alinea los elementos en la misma línea */
-    align-items: center; /* Alinea verticalmente */
-    gap: 20px; /* Espacio entre la imagen y el texto */
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
     padding: 20px;
 }
 
 .info-image {
-    width: 40%; /* Ajusta el tamaño de la imagen */
-    max-width: 300px; /* Máximo ancho para evitar que sea demasiado grande */
+    width: 40%; 
+    max-width: 300px;
 }
 
 .info-text {
-    width: 60%; /* Ajusta el espacio del texto */
+    width: 60%;
 }
 
 @media (max-width: 768px) {
     .info-section {
-        flex-direction: column; /* Para móviles, cambia a una sola columna */
+        flex-direction: column;
         text-align: center;
     }
 
     .info-image {
-        width: 80%; /* Ajusta la imagen para pantallas pequeñas */
+        width: 80%; 
     }
 }
-/* 📱 MEDIA QUERIES PARA HACERLO RESPONSIVE */
+
 @media (max-width: 820px) {
     .info-section {
         width: 95%;
@@ -306,21 +341,21 @@ footer {
     }
 
     .info-text h3 {
-        font-size: 24px; /* Reduce el tamaño del título en pantallas medianas */
+        font-size: 24px; 
     }
 
     .info-text p {
-        font-size: 14px; /* Reduce el tamaño del texto */
+        font-size: 14px;
     }
 
     .info-section img {
-        width: 350px; /* Reduce la imagen */
+        width: 350px;
     }
 }
 
 @media (max-width: 480px) {
     .info-text h3 {
-        font-size: 20px; /* Más pequeño en móviles */
+        font-size: 20px;
     }
 
     .info-text p {
@@ -328,7 +363,7 @@ footer {
     }
 
     .info-section img {
-        width: 250px; /* Imagen aún más pequeña */
+        width: 250px;
     }
 
     .small-images img {
@@ -337,7 +372,7 @@ footer {
     }
 }
 
-/* Contenedor de tarjetas */
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -348,7 +383,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* Tarjeta */
+
 .card {
     background: #fff;
     border-radius: 10px;
@@ -359,7 +394,7 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Imagen de la tarjeta */
+
 .card img {
     width: 100%;
     height: 180px;
@@ -367,25 +402,25 @@ footer {
     border-radius: 8px;
 }
 
-/* Título */
+
 .card h3 {
     font-size: 18px;
     margin: 10px 0;
     color: #333;
 }
 
-/* Descripción */
+
 .card p {
     font-size: 14px;
     color: #666;
 }
 
-/* Efecto hover */
+
 .card:hover {
     transform: translateY(-5px);
 }
 
-/* Responsive: Se ajusta a 2 columnas en tablet y 1 en móvil */
+
 @media (max-width: 1024px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
@@ -397,7 +432,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-/* Footer */
+
 footer {
     background: #222;
     color: #fff;
@@ -405,7 +440,7 @@ footer {
     font-size: 14px;
 }
 
-/* Contenedor principal del footer */
+
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -416,13 +451,13 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Logo en el footer */
+
 .footer-logo img {
     width: 150px;
     height: auto;
 }
 
-/* Enlaces de navegación */
+
 .footer-links {
     display: flex;
     gap: 15px;
@@ -438,7 +473,7 @@ footer {
     color: #ffcc00;
 }
 
-/* Redes sociales */
+
 .footer-social {
     display: flex;
     gap: 15px;
@@ -454,7 +489,7 @@ footer {
     transform: scale(1.2);
 }
 
-/* Sección de derechos reservados */
+
 .footer-bottom {
     text-align: center;
     padding-top: 15px;
@@ -462,7 +497,7 @@ footer {
     
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -590,24 +625,24 @@ footer {
 
 #whatsapp-button {
     position: fixed;
-    bottom: 40px; /* Ajusta la distancia desde la parte inferior de la pantalla */
-    right: 40px;  /* Ajusta la distancia desde la parte derecha de la pantalla */
-    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
-    background-color: transparent; /* Fondo transparente */
-    border-radius: 50%; /* Hace que el contorno sea redondo */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    bottom: 40px; 
+    right: 40px;  
+    z-index: 1000; 
+    background-color: transparent; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 #whatsapp-icon {
-    width: 100px; /* Tamaño del icono */
-    height: 100px; /* Tamaño del icono */
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%;
 }
 #whatsapp-button:hover {
-    transform: scale(1.5); /* Aumenta un 10% el tamaño del botón cuando se pasa el mouse */
-    transition: transform 0.3s ease; /* Suaviza el cambio de tamaño */
+    transform: scale(1.5); 
+    transition: transform 0.3s ease; 
 }
-/* Tarjetas de Servicios - Más Grandes y Alineadas */
+
 .body-servicios{
     background-image: url(imagenes/servicios.png);
     background-repeat: no-repeat;
@@ -630,40 +665,37 @@ footer {
     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido */
+    align-items: center; 
 }
 
 .service-card img {
     width: 100%;
-    max-width: 400px; /* Tamaño más grande */
+    max-width: 400px; 
     border-radius: 15px;
 }
 
 .service-card h3 {
     margin-top: 15px;
     font-size: 2em;
-    max-width: 400px; /* Limita el ancho del título */
+    max-width: 400px; 
 }
 
 .service-card p {
     font-size: 1.2em;
     line-height: 1.6;
     color: #333;
-    max-width: 400px; /* Alinea el texto con la imagen */
-    text-align: justify; /* Alineación justificada */
+    max-width: 400px; 
+    text-align: justify; 
 }
 
-/* Efecto hover */
+
 .service-card:hover {
     transform: scale(1.05);
 }
 
-/* Ajustes Responsivos */
-
-/* Para Tablets */
 @media (max-width: 1024px) {
     .service-cards {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en tablets */
+        grid-template-columns: repeat(1, 1fr); 
     }
 
     .service-card img {
@@ -672,24 +704,23 @@ footer {
 
     .service-card h3,
     .service-card p {
-        max-width: 350px; /* Mantiene la alineación con la imagen */
+        max-width: 350px;
     }
 }
 
-/* Para Móviles */
+
 @media (max-width: 768px) {
     .service-card img {
-        max-width: 300px; /* Ajuste para móviles */
+        max-width: 300px;
     }
 
     .service-card h3,
     .service-card p {
-        max-width: 300px; /* Alineación en móviles */
+        max-width: 300px;
     }
 }
 
 
-/* Tarjetas de Productos */
 .product-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -708,13 +739,13 @@ footer {
 
 .product-card img {
     width: 100%;
-    max-width: 250px; /* Tamaño más grande */
+    max-width: 250px;
     border-radius: 10px;
 }
 
 .product-card h3 {
     margin-top: 10px;
-    font-size: 1.5em; /* Más grande */
+    font-size: 1.5em;
     max-width: 250px;
 }
 
@@ -726,17 +757,14 @@ footer {
     text-align: justify;
 }
 
-/* Efecto hover */
+
 .product-card:hover {
     transform: scale(1.05);
 }
 
-/* Ajustes Responsivos */
-
-/* Para Tablets */
 @media (max-width: 1024px) {
     .product-cards {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .product-card img {
@@ -752,14 +780,13 @@ footer {
     }
 }
 
-/* Para Móviles */
 @media (max-width: 768px) {
     .product-cards {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+        grid-template-columns: repeat(1, 1fr); 
     }
 
     .product-card img {
-        max-width: 200px; /* Ajuste para móviles */
+        max-width: 200px; 
     }
 
     .product-card h3 {
@@ -788,13 +815,13 @@ footer {
 .info-container {
     display: flex;
     align-items: center;
-    gap: 80px; /* Espacio entre la imagen y el texto */
+    gap: 80px; 
     max-width: 900px;
     width: 100%;
 }
 
 .info-image {
-    width: 150px; /* Tamaño de la imagen */
+    width: 150px; 
     height: auto;
     border-radius: 8px;
 }
@@ -814,7 +841,7 @@ footer {
     text-align: justify;
 }
 
-/* Responsive para móviles */
+
 @media (max-width: 768px) {
     .info-container {
         flex-direction: column;
@@ -900,4 +927,3 @@ footer {
 }
 
 
-}
